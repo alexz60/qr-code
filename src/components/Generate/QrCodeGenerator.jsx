@@ -1,0 +1,33 @@
+import {QRCodeSVG} from 'qrcode.react'
+import { useState } from 'react'
+import s from './qrCodeGenerator.module.css'
+import {GENERATE_DATA} from '../../constants'
+
+export const QrCodeGenerator = () => {
+    const [value, setValue] = useState('hello')
+    const [showQR, setShowQR] = useState('')
+
+    return (
+        <div className={s.container}>
+            <input
+                className={s.input}
+                type='text'
+                placeholder='Введите текст...'
+                value={value}
+                onChange={(event) => {
+                    setValue(event.target.value)
+                    setShowQR('')
+                }}
+            />
+            <button className={s.button} type='button' onClick={() => {
+                const prevData = JSON.parse(localStorage.getItem(GENERATE_DATA) || '[]')
+                localStorage.setItem(GENERATE_DATA, JSON.stringify([...prevData, value]))
+
+                setShowQR(value)
+                setValue('')
+            }} >Сгенерировать QR</button>
+
+            {showQR !== '' && <QRCodeSVG className={s.qrWrapper} value={showQR} size='200' />}
+        </div>
+    )
+}
