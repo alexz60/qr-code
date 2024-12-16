@@ -4,10 +4,11 @@ import { QrCodeGenerator } from "./components/Generate/QrCodeGenerator";
 import { QrCodeScanner } from "./components/Scan/QrCodeScanner";
 import { History } from "./components/History/History";
 import { GENERATE_DATA, SCAN_DATA } from "./constants";
+import s from './layout.module.css'
 
 export const Layout = () => {
     return (
-    <div>
+    <div className={s.container}>
       <Navigation />
       <Routes>
         <Route path="/generate" element={<QrCodeGenerator />} />

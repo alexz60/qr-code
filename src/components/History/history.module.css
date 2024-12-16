@@ -1,21 +1,22 @@
 .container {
-    max-height: calc(97vh - 4rem);
-    overflow-y: auto;
+    flex: 1;
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
+}
+
+.scroll_list {
+    height: 1px;
+    flex-grow: 1;
+    overflow-y: auto;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
 }
 
 .item {
     font-size: 1.2rem;
     padding-left: 5px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        max-height: calc(97vh - 11rem);
-    }
 }
