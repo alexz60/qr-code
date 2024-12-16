@@ -1,13 +1,12 @@
-import { GENERATE_DATA } from "../../constants"
-import s from './generateHistory.module.css'
+import "../../constants.js"
+import s from './history.module.css'
 import {QRCodeSVG} from 'qrcode.react'
 
-export const GenerateHistory = () => {
-    const data = JSON.parse(localStorage.getItem(GENERATE_DATA) || '[]')
+export const History = ({key_data}) => {
+    const data = JSON.parse(localStorage.getItem(key_data) || '[]')
 
     return (
         <div className={s.container}>
-            <h3 className={s.header} >История генерирования</h3>
             {data.map((text) =>
                 <>
                     <p className={s.item} key={text}>

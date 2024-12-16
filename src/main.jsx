@@ -3,7 +3,7 @@ import {BrowserRouter} from "react-router-dom"
 import { Layout } from './Layout'
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename='/qr-code'>
     <Layout />
   </BrowserRouter>
 )
