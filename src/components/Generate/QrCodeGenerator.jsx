@@ -21,8 +21,7 @@ export const QrCodeGenerator = () => {
             />
             <button className={s.button} type='button' onClick={() => {
                 const prevData = JSON.parse(localStorage.getItem(GENERATE_DATA) || '[]')
-                localStorage.setItem(GENERATE_DATA, JSON.stringify([...prevData, value]))
-
+                localStorage.setItem(GENERATE_DATA, JSON.stringify([...prevData, {dtKey: (new Date()).getTime(), text: value}]))
                 setShowQR(value)
                 setValue('')
             }} >Сгенерировать QR</button>

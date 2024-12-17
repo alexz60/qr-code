@@ -9,7 +9,7 @@
     height: 1px;
     flex-grow: 1;
     overflow-y: auto;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
     display: flex;

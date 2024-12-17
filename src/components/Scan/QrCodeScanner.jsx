@@ -15,7 +15,7 @@ export const QrCodeScanner = () => {
                     setRes(result[0].rawValue)
 
                     const prevData = JSON.parse(localStorage.getItem(SCAN_DATA) || '[]')
-                    localStorage.setItem(SCAN_DATA, JSON.stringify([...prevData, result[0].rawValue]))
+                    localStorage.setItem(SCAN_DATA, JSON.stringify([...prevData, {dtKey: (new Date()).getTime(), text: result[0].rawValue}]))
                 }}
             />
             <p className={s.result}>{res}</p>
