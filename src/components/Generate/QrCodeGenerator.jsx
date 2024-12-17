@@ -11,7 +11,7 @@ export const QrCodeGenerator = () => {
 
     return (
         <div className={s.container}>
-            <div>{isMobile ? 'true' : 'false'}</div>
+            <div>{isMobile}</div>
             <input
                 className={s.input}
                 type='text'
