@@ -7,7 +7,8 @@ import { GENERATE_DATA, SCAN_DATA } from "./constants";
 import s from './layout.module.css'
 
 export const Layout = () => {
-    return (
+
+  return (
     <div className={s.container}>
       <Navigation />
       <Routes>
