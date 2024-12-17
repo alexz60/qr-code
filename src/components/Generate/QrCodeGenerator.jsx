@@ -2,13 +2,16 @@ import {QRCodeSVG} from 'qrcode.react'
 import { useState } from 'react'
 import s from './qrCodeGenerator.module.css'
 import {GENERATE_DATA} from '../../constants'
+import { UseDeviceDetect } from '../UseDeviceDetect/UseDeviceDetect'
 
 export const QrCodeGenerator = () => {
     const [value, setValue] = useState('hello')
     const [showQR, setShowQR] = useState('')
+    const isMobile = UseDeviceDetect()
 
     return (
         <div className={s.container}>
+            <div>{isMobile ? 'true' : 'false'}</div>
             <input
                 className={s.input}
                 type='text'
